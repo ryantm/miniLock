@@ -1,0 +1,22 @@
+{
+  "name": "miniLock",
+  "version": "0.0.1",
+  "description": "File encryption software that does more with less.",
+  "directories": {},
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaepora/miniLock.git"
+  },
+  "keywords": [
+    "encryption",
+    "crypto",
+    "js",
+    "web"
+  ],
+  "author": "Nadim Kobeissi <nadim@nadim.computer>",
+  "license": "AGPL3"
+}

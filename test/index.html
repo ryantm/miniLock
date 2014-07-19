@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>miniLock Unit Test Kit</title>
+	<link rel="icon" type="image/png" href="img/icon32.png" />
+	<!-- QUnit -->
+	<link rel="stylesheet" type="text/css" href="qunit/qunit.css">
+	<script type="application/javascript" src="qunit/qunit.js"></script>
+	<!-- Dependencies -->
+	<script type="application/javascript" src="js/lib/jquery/jquery.js"></script>
+	<script type="application/javascript" src="js/lib/crypto/nacl.js"></script>
+	<script type="application/javascript" src="js/lib/zxcvbn.js"></script>
+	<script type="application/javascript" src="js/miniLock.js"></script>
+	<script type="application/javascript" src="js/lib/phrase.js"></script>
+	<!-- Configuration -->
+	<script type="application/javascript">
+		QUnit.config.testTimeout = 10000
+		QUnit.config.reorder = false
+
+		miniLock.test = {}
+	</script>
+	<!-- Tests -->
+	<script type="application/javascript" src="tests/basic.js"></script>
+	<script type="application/javascript" src="tests/getPhrase.js"></script>
+	<script type="application/javascript" src="tests/checkPassphrase.js"></script>
+	<script type="application/javascript" src="tests/deriveKey.js"></script>
+	<script type="application/javascript" src="tests/validateID.js"></script>
+	<script type="application/javascript" src="tests/getRandomFilename.js"></script>
+	<script type="application/javascript" src="tests/getFileKey.js"></script>
+	<script type="application/javascript" src="tests/getNonce.js"></script>
+	<script type="application/javascript" src="tests/encryptDecryptFile.js"></script>
+	<script type="application/javascript" src="tests/isFilenameSuspicious.js"></script>
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+</body>
+</html>

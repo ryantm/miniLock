@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<title>miniLock</title>
+	<link rel="stylesheet" href="css/lib/reset.css" type="text/css" />
+	<link rel="stylesheet" href="css/lib/jquery.utip.css" type="text/css" />
+	<link rel="stylesheet" href="css/lib/switches.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="icon" type="image/png" href="img/icon32.png" />
+	<script type="application/javascript" src="js/lib/mustache.js"></script>
+	<script type="application/javascript" src="js/lib/jquery/jquery.js"></script>
+	<script type="application/javascript" src="js/lib/jquery/jquery.color.js"></script>
+	<script type="application/javascript" src="js/lib/jquery/jquery.utip.js"></script>
+	<script type="application/javascript" src="js/lib/crypto/nacl.js"></script>
+	<script type="application/javascript" src="js/lib/indexOfMulti.js"></script>
+	<script type="application/javascript" src="js/lib/zxcvbn.js"></script>
+	<script type="application/javascript" src="js/miniLock.js"></script>
+	<script type="application/javascript" src="js/templates.js"></script>
+	<script type="application/javascript" src="js/lib/phrase.js"></script>
+	<script type="application/javascript" src="js/ui.js"></script>
+</head>
+<body>
+	<div class="squareContainer">
+		<div class="square">
+
+			<div class="squareFront">
+				<!-- File Unlock Screen -->
+				<div class="unlock screen">
+					<h1>Enter your miniLock key</h1>
+					<p>
+						Encrypt and decrypt files from any computer using your miniLock key.
+						Send your miniLock ID to others so they can encrypt files to you.
+					</p>
+					<p>
+						<strong>Your key must be completely unique.</strong>
+						Anyone with the same key can impersonate you.
+					</p>
+					<form class="unlockForm">
+						<input type="password" class="miniLockKey" maxlength="1024" />
+						<input type="submit" value="&#xf078;" />
+						<div class="keyStrength" data-keyok="Key OK. Unlocking...">
+							Enter key...
+						</div>
+					</form>
+				</div>
+				<!-- File Select Screen -->
+				<div class="selectFile screen">
+					<div class="fileSelector">
+						<span class="dragFileIcon">&#xf094;</span>
+						<span class="dragFileInfo"
+							data-select="Select file to encrypt/decrypt"
+							data-drop="Drop it..."
+							data-read="Reading..."
+						></span>
+					</div>
+					<form class="fileSelectForm">
+						<input type="file" name="file" class="fileSelectDialog" />
+						<input type="reset" value="reset" class="hidden" />
+					</form>
+					<div class="myMiniLockID">
+						<span>my miniLock ID</span>
+						<input type="text" value="" spellcheck="false" readonly="readonly" />
+					</div>
+				</div>
+			</div>
+
+			<div class="squareBack">
+				<!-- Recipient Select Screen -->
+				<div class="recipientSelect screen">
+					<input type="button" value="&#xf0a4;" class="flipBack" data-utip="Go back" data-utip-gravity="se" />
+					<!-- <input type="button" value="&#xf018;" class="contacts" data-utip="Saved contacts" data-utip-gravity="se" /> -->
+					<form class="recipientForm">
+						<h1>Enter miniLock ID(s) of recipient(s):</h1>
+						<div class="recipientScroller">
+							<input type="text" value="" placeholder="Recipient's miniLock ID" />
+						</div>
+						<br />
+						<label class="switch">
+							<input type="checkbox" class="ios-switch tinyswitch encryptToSelf" />
+							<div><div></div></div>
+							<span class="switchLabel">Encrypt to myself also</span>
+						</label>
+						<label class="switch lastSwitch">
+							<input type="checkbox" class="ios-switch tinyswitch randomizeFilename" />
+							<div><div></div></div>
+							<span class="switchLabel">Save with random file name</span>
+						</label>
+						<input type="button" value="&#xf05d;" class="addAnotherRecipient" data-utip="Add another recipient" data-utip-gravity="sw" />
+						<input type="submit" value="&#xf078;" class="encryptFile" data-utip="Encrypt file" data-utip-gravity="sw" />
+					</form>
+					<div class="contacts">
+					</div>
+				</div>
+				<!-- File Save Screen -->
+				<div class="fileSave screen">
+					<div class="progressBar">
+						<div class="progressBarFill">
+							<span class="progressBarPercentage"
+								data-encryptioncomplete="Encryption complete"
+								data-decryptioncomplete="Decryption complete"
+								data-encryptionerror="Encryption error"
+								data-decryptionerror="Decryption error"
+							></span>
+						</div>
+					</div>
+					<div class="saveLink">
+						<a href="" class="dragout fileSaveLink" draggable="true">
+							<div class="fileInfoIcon">
+								&#xf011;
+							</div>
+							<div class="fileInfoData">
+								<h2 class="fileName"></h2>
+								<span class="fileSender"></span>
+								<span class="save"><span class="octicon">&#xf0a3;</span>Save file (<span class="fileSize"></span>)</span>
+								<div class="filenameSuspicious">
+									<span>
+										miniLock cannot guarantee the safety of this file.
+										<br />
+										Never open files from people you don't trust.
+									</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

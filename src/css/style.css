@@ -1,0 +1,502 @@
+/*
+	* Meta
+*/
+
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../woff/openSans.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: bold;
+	font-weight: 700;
+	src: url('../woff/openSansBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 400;
+	src: url('../woff/openSansItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 700;
+	src: url('../woff/openSansBoldItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Octicons';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../woff/octicons.woff') format('woff');
+}
+
+/*
+	* Global
+*/
+
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	-webkit-font-smoothing: antialiased !important;
+	font-smoothing: antialiased;
+	background: #49698D;
+}
+
+a {
+	color: #FFF;
+	font-weight: bold;
+}
+
+strong {
+	font-weight: 700;
+	font-style: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+input {
+	border: none;
+	padding: 4px;
+	outline: none;
+	background: rgba(255, 255, 255, 0.1);
+	color: #FFF;
+}
+
+input:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+input:active {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.hidden {
+	display: none;
+}
+
+.octicon {
+	font-family: 'Octicons'
+}
+
+*::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+
+*:-moz-placeholder {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/*
+	* Square (container)
+*/
+
+div.squareContainer {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
+	margin: 0;
+}
+
+div.squareContainer.flip div.square {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+div.squareContainer, div.squareFront, div.squareBack {
+	width: 600px;
+	height: 600px;
+}
+
+div.square {
+	-webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	-o-transition: 0.6s;
+	transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	position: relative;
+	border-radius: 2px;
+}
+
+div.squareFront, div.squareBack {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*
+	* Square (front)
+*/
+
+div.squareFront {
+	z-index: 2;
+	background: #29496D;
+	color: #FFF;
+	border-radius: 2px;
+}
+
+/*
+	* Unlock screen
+*/
+
+div.unlock {
+	margin: 0 auto;
+	width: 500px;
+	margin-top: 130px;
+}
+
+div.unlock h1 {
+	font-size: 1.5em;
+}
+
+div.unlock p {
+	font-size: 0.9em;
+	margin: 20px 0;
+}
+
+div.unlock input.miniLockKey {
+	font-size: 1.3em;
+	width: 450px;
+	font-family: 'Octicons';
+}
+
+div.unlock input[type=submit] {
+	font-size: 1.3em;
+	font-family: 'Octicons';
+	width: 30px;
+}
+
+div.unlock div.keyStrength {
+	background: rgba(0, 0, 0, 0.15);
+	font-size: 0.8em;
+	font-weight: bold;
+	width: 449px;
+	padding: 3px 5px;
+	line-height: 1.6em;
+	overflow: hidden;
+	height: 20px;
+	border-radius: 1px 1px 2px 2px;
+}
+
+div.unlock div.keyStrength span.keyStrengthMoreInfo {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+div.unlock div.keyStrength p {
+	border-radius: 6px;
+	padding: 3px;
+	margin-top: 7px;
+}
+
+div.unlock div.keyStrength input[type=text] {
+	width: 430px;
+	font-size: 1em;
+}
+
+div.unlock div.keyStrength input[type=button] {
+	font-size: 1.1em;
+	margin-top: 7px;
+}
+
+
+/*
+	* File select
+*/
+
+div.selectFile {
+	display: none;
+}
+
+div.fileSelector {
+	border: 5px dashed #FFF;
+	width: 350px;
+	height: 350px;
+	margin: 90px auto 0 auto;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+div.fileSelector:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+div.fileSelector:active {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+div.fileSelector span.dragFileIcon {
+	font-family: 'Octicons';
+	margin-top: 150px;
+	font-size: 11em;
+	display: inline-block;
+}
+
+div.fileSelector span.dragFileInfo {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+	padding: 1px 6px;
+	text-align: center;
+	margin: 40px auto;
+	width: 200px;
+	font-size: 0.8em;
+	font-weight: bold;
+	display: block;
+}
+
+input.fileSelectDialog {
+	display: none;
+}
+
+div.myMiniLockID {
+	border-radius: 10px;
+	width: 442px;
+	margin: 50px auto 0 auto;
+}
+
+div.myMiniLockID span {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 5px 0 0 5px;
+	display: inline;
+	height: 25px;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 5px;
+	cursor: default;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+div.myMiniLockID input {
+	border: none;
+	padding: 5px;
+	margin: 0 0 0 -3px;
+	position: relative;
+	bottom: 2px;
+	height: 18px;
+	width: 320px;
+	border-radius: 0 5px 5px 0;
+	background: rgba(255, 255, 255, 0.1);
+	font-family: monospace;
+}
+
+/*
+	* Square (back)
+*/
+
+div.squareBack {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+	background: #49698D;
+	color: #FFF;
+	border-radius: 2px;
+}
+
+div.squareBack p {
+	font-weight: bold;
+	font-size: 5em;
+	text-align: center;
+	margin-top: 240px;
+}
+
+/*
+	* Recipient select screen
+*/
+
+div.recipientSelect {
+	padding: 10px;
+}
+
+input.flipBack, input.contacts {
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	font-family: 'Octicons';
+	font-weight: bold;
+	font-size: 1.6em;
+	border: none;
+	cursor: default;
+}
+
+form.recipientForm {
+	margin-top: 30px;
+}
+
+div.recipientScroller {
+	max-height: 300px;
+	overflow: scroll;
+	display: inline-block;
+}
+
+form.recipientForm input[type=text] {
+	width: 360px;
+	display: block;
+	padding: 10px;
+	font-size: 0.9em;
+	font-family: monospace;
+	border: 1px solid transparent;
+}
+
+form.recipientForm label.switch {
+	display: block;
+	width: 200px;
+	height: 27px;
+	padding: 2px 10px !important;
+	margin-top: 8px;
+	font-size: 0.9em;
+}
+
+form.recipientForm label.lastSwitch {
+	display: inline-block;
+	margin-top: 2px
+}
+
+form.recipientForm span.switchLabel {
+	vertical-align: 5px;
+}
+
+form.recipientForm input[type=button], form.recipientForm input[type=submit] {
+	font-family: 'Octicons';
+	font-size: 1.6em;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	bottom: 9px;
+}
+
+form.recipientForm input.addAnotherRecipient {
+	margin: 0 0 0 74px;
+}
+
+/*
+	* File save screen
+*/
+
+div.fileSave {
+	display: none;
+	margin-top: 275px;
+}
+
+div.progressBar {
+	width: 250px;
+	height: 20px;
+	margin: 0 auto;
+	border: 1px solid #FFF;
+	padding: 2px;
+}
+
+div.progressBarFill {
+	width: 0%;
+	height: 100%;
+	background: #FFF;
+	color: #49698D;
+	text-align: center;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+span.progressBarPercentage {
+	position: relative;
+	bottom: 2px;
+}
+
+div.saveLink {
+	font-family: monospace;
+	display: none;
+	width: 480px;
+	border: 1px solid white;
+	padding: 20px 10px;
+	margin: -80px auto 0 auto;
+	word-wrap: break-word;
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0 0 0 5px #49698D;
+}
+
+div.saveLink:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+div.saveLink:active {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+div.saveLink a.fileSaveLink {
+	text-decoration: none;
+	word-wrap: break-word;
+	font-size: 0.9em;
+}
+
+div.fileInfoIcon {
+	font-family: 'Octicons';
+	font-size: 5em;
+	padding: 35px 30px 0 10px;
+	-webkit-font-smoothing: none;
+	font-smoothing: none;
+}
+
+div.fileInfoData {
+	margin: -55px 0 0 100px;
+}
+
+div.fileInfoData h2.fileName {
+	word-wrap: break-word;
+}
+
+div.fileInfoData span.fileSize {
+}
+
+div.fileInfoData span.fileSender {
+	font-size: 0.8em;
+}
+
+div.fileInfoData span.save {
+	display: inline-block;
+	font-size: 1.2em;
+	font-family: 'Open Sans';
+	background: rgba(255, 255, 255, 0.1);
+	padding: 10px;
+	margin-top: 10px;
+}
+
+div.fileInfoData span.save span.octicon {
+	font-size: 1.4em;
+	margin-right: 10px;
+	vertical-align: -2px;
+}
+
+div.filenameSuspicious {
+	margin-top: 10px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 5px;
+	font-size: 0.9em;
+	font-family: 'Open Sans';
+}
