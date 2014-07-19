@@ -140,7 +140,7 @@ Sincere thanks are presented to Dmitry Chestnykh for his work on porting TweetNa
 
 ##9. Credits
 **miniLock**
-* Copyright 2014 [Nadim Kobeissi](http://nadim.computer). Released under the APGLv3 license.
+* Copyright 2014 [Nadim Kobeissi](http://nadim.computer). Released under the AGPLv3 license.
 
 **TweetNaCL**
 * [Daniel J. Bernstein](http://cr.yp.to/djb.html)
