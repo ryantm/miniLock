@@ -3,7 +3,7 @@
 ###Links
 * **[Code](https://github.com/kaepora/miniLock)** | **[Issues](https://github.com/kaepora/miniLock/issues)**
 * **[HOPE X Slides](http://minilock.io/files/HOPEX.pdf)**
-* **Follow on [Twitter](https://twotter.com/minilockapp)** for latest project news
+* **Follow on [Twitter](https://twitter.com/minilockapp)** for latest project news
 
 
 ##Pre-Release Software
